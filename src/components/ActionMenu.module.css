@@ -1,0 +1,30 @@
+.deck {
+  padding: 10px 12px calc(12px + env(safe-area-inset-bottom));
+  background: linear-gradient(rgba(6, 4, 12, 0), rgba(6, 4, 12, 0.88) 22%, #06040c);
+  border-top: var(--px-3) solid rgba(255, 255, 255, 0.12);
+}
+
+.hint {
+  margin-bottom: 8px;
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  min-height: 14px;
+}
+
+.grid {
+  display: grid;
+  gap: 8px;
+}
+
+.grid[data-columns='3'] {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid[data-columns='2'] {
+  grid-template-columns: repeat(2, 1fr);
+}

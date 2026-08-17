@@ -1,0 +1,64 @@
+.scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* the artwork's own near-black, so the letterbox reads as part of the room */
+  background: #000;
+}
+
+/* Holds the contained desk artwork; grows to fill whatever the deck leaves. */
+.stageArea {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.desk {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+  z-index: 1;
+}
+
+/* Crosshair while POOP is armed, so desktop users know to click the desk. */
+.aiming {
+  cursor: crosshair;
+}
+
+.poop {
+  position: absolute;
+  translate: -50% -85%;
+  z-index: 5;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.5));
+}
+
+.darken {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.bubbleLayer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(52px + env(safe-area-inset-top));
+  display: flex;
+  justify-content: center;
+  padding: 0 14px;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.deck {
+  position: relative;
+  z-index: 25;
+}

@@ -1,0 +1,73 @@
+/* Anchored just under the left slipper's eye in the supplied photo. */
+.wrap {
+  position: absolute;
+  left: 19%;
+  top: 51%;
+  width: 13%;
+  height: 28%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.drop {
+  position: absolute;
+  left: 12%;
+  top: 0;
+  width: 7px;
+  height: 11px;
+  background: #bfe8ff;
+  border: var(--px-2) solid #5aa9d8;
+  border-radius: 60% 60% 50% 50% / 80% 80% 40% 40%;
+  opacity: 0;
+  animation: fall 1.7s linear infinite;
+  animation-delay: var(--d);
+  box-shadow: 0 0 6px rgba(150, 220, 255, 0.7);
+}
+
+/* second column of drops, slightly offset so it doesn't look mechanical */
+.drop:nth-child(even) {
+  left: 46%;
+  animation-duration: 2s;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.6);
+  }
+  12% {
+    opacity: 1;
+    transform: translateY(6px) scale(1);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(120px) scale(0.85);
+  }
+}
+
+.pool {
+  position: absolute;
+  left: 0;
+  bottom: -6%;
+  width: 62%;
+  height: 9px;
+  background: rgba(150, 215, 255, 0.5);
+  border-radius: 50%;
+  filter: blur(2px);
+  animation: puddle 3.4s ease-in-out infinite;
+}
+
+@keyframes puddle {
+  0%,
+  100% {
+    transform: scaleX(0.7);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scaleX(1.15);
+    opacity: 0.65;
+  }
+}

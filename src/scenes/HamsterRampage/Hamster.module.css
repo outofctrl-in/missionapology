@@ -1,0 +1,26 @@
+.wrap {
+  position: absolute;
+  z-index: 8;
+  /* x/y describe the hamster's feet, so anchor bottom-centre. */
+  translate: -50% -100%;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.55));
+}
+
+.sprite {
+  position: relative;
+  z-index: 2;
+}
+
+.shadow {
+  position: absolute;
+  left: 50%;
+  bottom: -3%;
+  translate: -50% 0;
+  width: 62%;
+  height: 8%;
+  background: rgba(0, 0, 0, 0.42);
+  border-radius: 50%;
+  filter: blur(3px);
+  z-index: 1;
+}

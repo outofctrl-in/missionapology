@@ -1,0 +1,101 @@
+.bubble {
+  position: relative;
+  max-width: 78%;
+  padding: 14px 16px;
+  background: var(--bubble-bg, #fffdf5);
+  color: var(--bubble-fg, #16131c);
+  border: var(--px-3) solid var(--bubble-border, #16131c);
+  border-radius: 4px;
+  box-shadow: var(--px-4) var(--px-4) 0 rgba(0, 0, 0, 0.45);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: clamp(13px, 3.6vw, 17px);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+.i1 {
+  font-size: clamp(14px, 4.2vw, 19px);
+}
+
+.i2 {
+  font-size: clamp(16px, 5.2vw, 23px);
+  border-width: var(--px-4);
+  letter-spacing: 0.02em;
+}
+
+.tone_villain {
+  --bubble-bg: #1b1020;
+  --bubble-fg: #ffd9f0;
+  --bubble-border: #ff5fbf;
+}
+
+.tone_avatar {
+  --bubble-bg: #eef6ff;
+  --bubble-fg: #10131c;
+  --bubble-border: #2d3550;
+}
+
+/*
+ * Tails are two stacked squares — an outline-coloured one and a slightly
+ * smaller fill-coloured one on top — so the nub keeps hard pixel edges
+ * instead of the soft triangle a CSS border-trick would give.
+ */
+.bubble {
+  --tail: 13px;
+}
+
+.bubble::after,
+.bubble::before {
+  content: '';
+  position: absolute;
+  display: none;
+  width: var(--tail);
+  height: var(--tail);
+  background: var(--bubble-bg, #fffdf5);
+}
+
+.bubble::before {
+  background: var(--bubble-border, #16131c);
+}
+
+.tail_down::before,
+.tail_down::after {
+  display: block;
+  left: 28px;
+}
+.tail_down::before {
+  bottom: calc(var(--tail) * -1 - var(--px-3));
+  height: calc(var(--tail) + var(--px-3));
+}
+.tail_down::after {
+  bottom: calc(var(--tail) * -1);
+  height: var(--tail);
+}
+
+.tail_left::before,
+.tail_left::after {
+  display: block;
+  bottom: 18px;
+}
+.tail_left::before {
+  left: calc(var(--tail) * -1 - var(--px-3));
+  width: calc(var(--tail) + var(--px-3));
+}
+.tail_left::after {
+  left: calc(var(--tail) * -1);
+}
+
+.tail_right::before,
+.tail_right::after {
+  display: block;
+  bottom: 18px;
+}
+.tail_right::before {
+  right: calc(var(--tail) * -1 - var(--px-3));
+  width: calc(var(--tail) + var(--px-3));
+}
+.tail_right::after {
+  right: calc(var(--tail) * -1);
+}

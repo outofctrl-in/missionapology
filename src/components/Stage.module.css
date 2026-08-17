@@ -1,0 +1,26 @@
+.viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  /* container-type lets the inner element size itself against the viewport
+     box using cqw/cqh, which is how the cover/contain maths below works. */
+  container-type: size;
+}
+
+.inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  /* height comes from the inline aspect-ratio */
+}
+
+/* Fill the box, cropping whichever axis overflows. */
+.cover {
+  width: max(100cqw, calc(100cqh * var(--art-aspect)));
+}
+
+/* Fit the whole artwork inside the box. */
+.contain {
+  width: min(100cqw, calc(100cqh * var(--art-aspect)));
+}

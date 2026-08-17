@@ -1,0 +1,29 @@
+.wrap {
+  position: absolute;
+  z-index: 10;
+  /* x/y describe the feet */
+  translate: -50% -100%;
+  transform-origin: 50% 100%;
+  pointer-events: none;
+}
+
+.img {
+  height: 100%;
+  width: auto;
+  display: block;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.6));
+}
+
+.shadow {
+  position: absolute;
+  left: 50%;
+  bottom: -2%;
+  translate: -50% 0;
+  width: 76%;
+  height: 4%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  filter: blur(3px);
+  z-index: -1;
+}

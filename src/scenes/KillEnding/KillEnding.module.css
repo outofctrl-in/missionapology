@@ -1,0 +1,79 @@
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: #07090f;
+  overflow: hidden;
+}
+
+.hamster {
+  position: absolute;
+  top: 97%;
+  width: 20%;
+  translate: -50% -100%;
+  z-index: 11;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.6));
+}
+
+.bomb {
+  position: absolute;
+  left: 47%;
+  top: 96%;
+  width: 11%;
+  translate: -50% -100%;
+  z-index: 14;
+  pointer-events: none;
+  filter: drop-shadow(0 0 12px rgba(255, 160, 60, 0.7));
+}
+
+.boom {
+  position: absolute;
+  left: 44%;
+  top: 62%;
+  width: 74%;
+  translate: -50% -50%;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.skull {
+  position: absolute;
+  left: 40%;
+  top: 58%;
+  width: 13%;
+  translate: -50% -50%;
+  z-index: 21;
+  pointer-events: none;
+}
+
+.bubbleLayer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4%;
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+  z-index: 25;
+  pointer-events: none;
+}
+
+.flash {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  z-index: 50;
+  pointer-events: none;
+  animation: blink 160ms steps(2) forwards;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0.95;
+  }
+  to {
+    opacity: 0;
+  }
+}

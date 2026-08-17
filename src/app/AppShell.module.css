@@ -1,0 +1,32 @@
+.shell {
+  position: fixed;
+  inset: 0;
+  height: var(--app-height);
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+ * The game always plays inside a portrait column. On a phone that column IS
+ * the viewport; on desktop it's a centred 9:16 frame so nothing stretches and
+ * the composition stays the one it was designed for.
+ */
+.frame {
+  position: relative;
+  width: min(100vw, calc(var(--app-height) * 9 / 16));
+  height: var(--app-height);
+  overflow: hidden;
+  background: var(--color-bg);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+}
+
+/* Give the desktop frame a subtle edge so it reads as a device, not a crop. */
+@media (min-aspect-ratio: 10/16) {
+  .frame {
+    border-left: 1px solid rgba(255, 255, 255, 0.07);
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+  }
+}

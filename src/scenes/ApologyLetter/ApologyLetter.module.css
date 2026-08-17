@@ -1,0 +1,98 @@
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: calc(24px + env(safe-area-inset-top)) 16px calc(20px + env(safe-area-inset-bottom));
+  background:
+    radial-gradient(130% 90% at 50% 10%, #4a2f1c 0%, #241608 55%, #150c04 100%);
+  overflow: hidden;
+}
+
+.paper {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  max-height: 74%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 26px 22px 30px;
+  color: #2a2118;
+  background: #fdf6e3;
+  /* faint ruled lines + a paper-grain tint, all in CSS */
+  background-image:
+    repeating-linear-gradient(rgba(120, 100, 70, 0) 0 27px, rgba(120, 100, 70, 0.13) 27px 28px),
+    radial-gradient(80% 60% at 20% 0%, rgba(255, 240, 200, 0.9), rgba(250, 238, 210, 0) 70%);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.55),
+    0 2px 0 rgba(255, 255, 255, 0.6) inset;
+  /* torn-ish edge */
+  clip-path: polygon(
+    0% 1%, 12% 0.3%, 28% 1.2%, 46% 0.2%, 64% 1.1%, 82% 0.3%, 100% 1%,
+    99.3% 20%, 100% 44%, 99.4% 68%, 100% 99%,
+    82% 99.6%, 64% 98.9%, 46% 99.8%, 28% 98.8%, 12% 99.7%, 0% 99%,
+    0.6% 68%, 0% 44%, 0.7% 20%
+  );
+}
+
+.tape {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  translate: -50% 0;
+  width: 92px;
+  height: 24px;
+  background: rgba(214, 198, 148, 0.72);
+  border-left: 1px dashed rgba(0, 0, 0, 0.12);
+  border-right: 1px dashed rgba(0, 0, 0, 0.12);
+  rotate: -2deg;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.greeting {
+  font-family: var(--font-hand);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #1f1a12;
+}
+
+.body {
+  display: grid;
+  gap: 12px;
+}
+
+.para {
+  font-family: var(--font-hand);
+  font-size: 15px;
+  line-height: 1.65;
+  white-space: pre-line;
+  color: #33291d;
+}
+
+.signature {
+  margin-top: 18px;
+  text-align: right;
+  font-family: var(--font-hand);
+  font-size: 18px;
+  color: #1f1a12;
+}
+
+.stamp {
+  /* bottom-left, so it never sits on top of the right-aligned signature */
+  position: absolute;
+  left: 20px;
+  bottom: 16px;
+  width: 32px;
+  opacity: 0.9;
+}
+
+.cta {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+}

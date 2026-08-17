@@ -1,0 +1,68 @@
+.wrap {
+  width: 100%;
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-family: var(--font-ui);
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-fg-dim);
+}
+
+.value {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-accent);
+  text-shadow: var(--px-2) var(--px-2) 0 rgba(0, 0, 0, 0.6);
+}
+
+.track {
+  display: flex;
+  gap: var(--px-2);
+  padding: var(--px-3);
+  background: #120f1c;
+  border: var(--px-3) solid #060409;
+  box-shadow: inset 0 var(--px-2) 0 rgba(0, 0, 0, 0.6);
+}
+
+.cell {
+  flex: 1;
+  height: 18px;
+  background: #241f36;
+  transition: background 140ms steps(2);
+}
+
+.cell.on {
+  background: linear-gradient(#ffe27a, #f2a413 55%, #e0730a);
+  box-shadow: inset 0 var(--px-2) 0 rgba(255, 255, 255, 0.5);
+  animation: pop 220ms steps(3) both;
+  animation-delay: calc(var(--i) * 12ms);
+}
+
+@keyframes pop {
+  0% {
+    transform: scaleY(0.4);
+  }
+  60% {
+    transform: scaleY(1.25);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cell.on {
+    animation: none;
+  }
+}

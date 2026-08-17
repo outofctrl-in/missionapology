@@ -1,0 +1,105 @@
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: #07090f;
+  overflow: hidden;
+}
+
+.meterBar {
+  padding: calc(12px + env(safe-area-inset-top)) 14px 10px;
+  background: #0a0c14;
+  border-bottom: var(--px-3) solid #04050a;
+  z-index: 20;
+}
+
+/* Impact flash over the doorway that's already painted into the artwork. */
+.doorFlash {
+  position: absolute;
+  left: 81%;
+  top: 14%;
+  width: 19%;
+  height: 82%;
+  z-index: 12;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, rgba(215, 235, 255, 0.9), rgba(160, 200, 255, 0) 70%);
+  mix-blend-mode: screen;
+}
+
+.hamster {
+  position: absolute;
+  top: 97%;
+  width: 20%;
+  translate: -50% -100%;
+  z-index: 11;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.6));
+}
+
+.lolly {
+  position: absolute;
+  left: 48%;
+  top: 72%;
+  width: 8%;
+  z-index: 12;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+}
+
+.impact {
+  position: absolute;
+  left: 44%;
+  top: 44%;
+  width: 34%;
+  translate: -50% -50%;
+  z-index: 18;
+  pointer-events: none;
+}
+
+.fallingPoop {
+  position: absolute;
+  left: 38%;
+  width: 13%;
+  translate: -50% 0;
+  z-index: 18;
+  pointer-events: none;
+}
+
+.avatarBubble {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4%;
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+  z-index: 22;
+  pointer-events: none;
+}
+
+.bigLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 40;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  pointer-events: none;
+}
+
+.bigLine .caption {
+  font-size: clamp(20px, 6.4vw, 30px);
+  line-height: 1.25;
+}
+
+.deck {
+  z-index: 20;
+}
+
+.deckSpacer {
+  height: calc(96px + env(safe-area-inset-bottom));
+}

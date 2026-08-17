@@ -1,0 +1,58 @@
+.scene {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.veil {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: #000;
+  pointer-events: none;
+}
+
+/* Above the veil, so the fallback is always legible. */
+.tapGate {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.tapLabel {
+  padding: 12px 24px;
+  border: var(--px-3) solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.55);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  animation: breathe 2s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
